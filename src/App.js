@@ -46,6 +46,7 @@ const App = () => {
     e.preventDefault();
 
     setQuery(search);
+    //setSearch("");
   }
 
   return (
@@ -59,10 +60,12 @@ const App = () => {
         </button>
       </form>
 
-      {recipes.map( (recipe, index ) => (
-          <Recipe key={index} title={recipe.recipe.label} calories={recipe.recipe.calories}
-          image={recipe.recipe.image} />
-      ))}
+      <div className="recipes">
+        {recipes.map( (recipe, index ) => (
+            <Recipe key={index} title={recipe.recipe.label} calories={recipe.recipe.calories}
+            image={recipe.recipe.image} ingredients={recipe.recipe.ingredients} />
+        ))}
+      </div>
     </div>
   );
 }
